@@ -8,13 +8,7 @@ import navIcon3 from '../assets/img/nav-icon3.svg';
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
-
-    const navigateToContact = () => {
-        const contactSection = document.getElementById('connect'); // Get the contact section by its ID
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
-        }
-    };
+    const [logoHeight, setLogoHeight] = useState('80px');
 
     useEffect(() => {
         const onScroll = () => {
@@ -23,21 +17,35 @@ export const NavBar = () => {
             } else {
                 setScrolled(false);
             }
-        }
+        };
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width <= 768) {
+                setLogoHeight('60px');
+            } else {
+                setLogoHeight('80px');
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value);
-    }
+    };
 
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
             <Container>
                 <Navbar.Brand href="#home" className="d-flex align-items-center">
-                    <img src={logo} alt="Logo" style={{ height: "80px", marginRight: "10px" }} />
-                    
+                    <img src={logo} alt="Logo" style={{ height: logoHeight, marginRight: "10px" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -53,12 +61,12 @@ export const NavBar = () => {
                             <a href="https://github.com/najia096" target="_blank"> <img src={navIcon2} alt="" /> </a>
                             <a href="https://www.facebook.com/raisa.riyasat" target="_blank"> <img src={navIcon3} alt="" /> </a>
                         </div>
-                        <button className="vvd" onClick={navigateToContact}>
-                    <span>Let's Connect</span>
-                </button>
+                        <button className="vvd" onClick={() => console.log('connect')}>
+                            <span>Let's Connect</span>
+                        </button>
                     </span>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-    )
-}
+    );
+};

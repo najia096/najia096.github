@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
+import contactImg from "../assets/img/contact1.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import './Contact.css';
 
 export const Contact = () => {
   const formInitialDetails = {

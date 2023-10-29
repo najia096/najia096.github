@@ -1,0 +1,37 @@
+/* Footer CSS */
+.footer {
+    padding: 0;
+    background-image: url('Experience.css');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .footer img {
+    width: 26%; /* Original size for larger screens */
+  }
+  
+  .footer p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #B8B8B8;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+  }
+  
+  /* Media Queries for Small Screens */
+  @media (max-width: 767px) {
+    .footer {
+      padding: 0;
+    }
+  
+    .footer img {
+      width: 20%; /* Adjust size for smaller screens */
+    }
+  
+    .footer p {
+      font-size: 12px; /* Decrease font size for smaller screens */
+      margin-top: 10px;
+    }
+  }
+  

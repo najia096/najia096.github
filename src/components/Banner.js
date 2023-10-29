@@ -5,6 +5,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import './Banner.css';
+import '../App.css';
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);

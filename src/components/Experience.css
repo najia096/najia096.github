@@ -1,9 +1,14 @@
-.Experience h2 {
+.experience {
+  padding: 80px 0;
+  position: relative;
+  background-color: black;
+}
+.experience h2 {
     font-size: 45px;
     font-weight: 700;
   text-align: center;
 }
-.Experience p {
+.experience p {
   color: #B8B8B8;
   font-size: 18px;
   letter-spacing: 0.8px;
@@ -12,55 +17,153 @@
   text-align: center;
   width: 56%;
 }
+.experience .nav.nav-pills {
+  width: 72%;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: rgb(255 255 255 / 10%);
+  overflow: hidden;
+}
+.experience .nav.nav-pills .nav-item {
+  width: 33.33333%;
+}
+.experience .nav.nav-pills .nav-link {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 17px 0;
+  color: #fff;
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  z-index: 0;
+}
+.experience .nav.nav-pills .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+.experience .nav.nav-pills .nav-link.active::before {
+    width: 100% !important;
+}
+.experience .nav.nav-pills .nav-link.active {
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+.nav-link#experiences-tabs-tab-first {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 55px 0px 0px 55px;
+}
+.nav-link#experiences-tabs-tab-second {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.nav-link#experiences-tabs-tab-third {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 55px 55px 0;
+}
+
+/* Add background to h3 tags in the experience items */
+.experience-item h3 {
+  background: #6a608b; /* Change the background color as needed */
+  padding: 10px 20px; /* Adjust padding for space around text */
+  border-radius: 5px; /* Add rounded corners for a card-like effect */
+  color: #ffffff; /* Text color */
+  margin-top: 0; /* Remove default margin */
+}
+
 /* Style each experience section with a background color */
 .experience-item {
-    background: linear-gradient(to bottom, #480b45, #0B1E40); /* Change the background color as desired */
-    border-radius: 10px; /* Add rounded corners for a card-like effect */
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the list items within each experience section */
-  .experience-item .experience-list {
-    list-style: none; /* Remove default bullet points */
-    padding-left: 0; /* Remove left padding */
-  }
-  
-  
+  background: linear-gradient(to bottom, #480b45, #0B1E40); /* Change the background color as desired */
+  border-radius: 10px; /* Add rounded corners for a card-like effect */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style the list items within each experience section */
+.experience-item .experience-list {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove left padding */
+}
 
 
-/* Style the list */
-.experience-list {
-    list-style: none; /* Remove default bullet points */
-    margin-left: 0; /* Remove left margin for the list items */
-    padding-left: 0; /* Remove left padding for the list items */
-    font-size: 18px;
-  }
-  
-/* Style the list items to align text to the left */
+
+
+/* Style the list items */
 .experience-list li {
-    text-align: left; /* Align the text to the left */
-    margin: 5px 0; /* Adjust the top and bottom margins for individual list items */
-    font-weight: normal; /* Adjust the font weight for list items (e.g., 'bold') */
-    position: relative;
-  }
-  
-  /* Add custom clipart symbols */
-  .experience-list li::before {
-    content: '✦'; /* You can replace this with any custom symbol or clipart */
-    color: #d3bebe; /* Adjust the color for the clipart symbol */
-    font-size: 16px; /* Adjust the font size for the clipart symbol */
-    margin-right: 5px; /* Add space between the symbol and the text */
-    position: absolute;
-    left: -20px; /* Adjust the position of the symbol */
-  }
-  
-  /* Style the line divider to make it colorful and prominent */
+text-align: left; /* Align the text to the left */
+margin: 5px 0; /* Adjust the top and bottom margins for individual list items */
+font-weight: normal; /* Adjust the font weight for list items (e.g., 'bold') */
+position: relative;
+font-size: 16px;
+padding-left: 25px; /* Provide space for the clip art */
+}
+
+
+/* Add custom clipart symbols */
+.experience-list li::before {
+  content: '✦'; /* You can replace this with any custom symbol or clipart */
+  color: #d3bebe; /* Adjust the color for the clipart symbol */
+  font-size: 16px; /* Adjust the font size for the clipart symbol */
+  margin-right: 5px; /* Add space between the symbol and the text */
+  position: absolute;
+  left: -20px; /* Adjust the position of the symbol */
+}
+
+/* Style the line divider to make it colorful and prominent */
 .experience-divider {
-    margin: 40px 0;
-    border: 2px solid #E74C3C; /* Change the border color to your preference */
-    width: 100%; /* Adjust the width of the divider line */
-    position: relative;
-    text-align: center;
+  margin: 40px 0;
+  border: 4px solid #a12600; /* Change the border color to your preference */
+  width: 100%; /* Adjust the width of the divider line */
+  position: relative;
+  text-align: center;
+}
+
+
+
+@media (max-width: 767px) {
+  .experience {
+    padding: 60px 0; /* Adjust the top and bottom padding for smaller devices */
   }
-  
+
+  .experience h2 {
+    font-size: 32px; /* Decrease the font size of the title for smaller screens */
+  }
+
+  .experience p {
+    font-size: 16px; /* Decrease the font size of the paragraphs */
+    width: 100%; /* Adjust width for better visibility on smaller screens */
+  }
+
+  .experience .nav.nav-pills {
+    width: 100%; /* Adjust the width for better visibility on smaller screens */
+  }
+
+  .experience .nav.nav-pills .nav-item {
+    width: 100%; /* Set the width to 100% for full-width on smaller screens */
+  }
+
+  .experience .nav.nav-pills .nav-link {
+    font-size: 14px; /* Decrease the font size of the links */
+    padding: 12px 0; /* Adjust the padding of the links for better display on smaller screens */
+  }
+
+  .nav-link#experie.experiences-tabs-tab-first,
+  .nav-link#experie.experiences-tabs-tab-second,
+  .nav-link#experie.experiences-tabs-tab-third {
+    border: none; /* Remove the specific borders set for each tab */
+    border-radius: 0; /* Set border-radius to 0 */
+  }
+
+  .background-image-right {
+    display: none; /* Hide the background image on smaller devices */
+  }
+}

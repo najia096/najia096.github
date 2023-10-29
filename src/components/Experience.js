@@ -6,7 +6,7 @@ import TrackVisibility from 'react-on-screen';
 
 export const Experience = () => {
   return (
-    <section className="skill" id="Experience">
+    <section className="experience" id="Experience">
       <Container>
         <Row>
           <Col size={12}>

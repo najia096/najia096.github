@@ -3,6 +3,7 @@ import logo from "../assets/img/logo1.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import './Footer.css';
 
 export const Footer = () => {
   return (
@@ -18,7 +19,7 @@ export const Footer = () => {
               <a href="#"><img src={navIcon2} alt="Icon" /></a>
               <a href="#"><img src={navIcon3} alt="Icon" /></a>
             </div>
-            <p>Copyright @Najia Jahan. All Rights Reserved</p>
+            <p>© Najia Jahan. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
