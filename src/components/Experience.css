@@ -1,0 +1,66 @@
+.Experience h2 {
+    font-size: 45px;
+    font-weight: 700;
+  text-align: center;
+}
+.Experience p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+/* Style each experience section with a background color */
+.experience-item {
+    background: linear-gradient(to bottom, #480b45, #0B1E40); /* Change the background color as desired */
+    border-radius: 10px; /* Add rounded corners for a card-like effect */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the list items within each experience section */
+  .experience-item .experience-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove left padding */
+  }
+  
+  
+
+
+/* Style the list */
+.experience-list {
+    list-style: none; /* Remove default bullet points */
+    margin-left: 0; /* Remove left margin for the list items */
+    padding-left: 0; /* Remove left padding for the list items */
+    font-size: 18px;
+  }
+  
+/* Style the list items to align text to the left */
+.experience-list li {
+    text-align: left; /* Align the text to the left */
+    margin: 5px 0; /* Adjust the top and bottom margins for individual list items */
+    font-weight: normal; /* Adjust the font weight for list items (e.g., 'bold') */
+    position: relative;
+  }
+  
+  /* Add custom clipart symbols */
+  .experience-list li::before {
+    content: '✦'; /* You can replace this with any custom symbol or clipart */
+    color: #d3bebe; /* Adjust the color for the clipart symbol */
+    font-size: 16px; /* Adjust the font size for the clipart symbol */
+    margin-right: 5px; /* Add space between the symbol and the text */
+    position: absolute;
+    left: -20px; /* Adjust the position of the symbol */
+  }
+  
+  /* Style the line divider to make it colorful and prominent */
+.experience-divider {
+    margin: 40px 0;
+    border: 2px solid #E74C3C; /* Change the border color to your preference */
+    width: 100%; /* Adjust the width of the divider line */
+    position: relative;
+    text-align: center;
+  }
+  
