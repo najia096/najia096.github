@@ -4,12 +4,20 @@ import logo from '../assets/img/logo1.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon4 from '../assets/img/leetcode.svg';
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [logoHeight, setLogoHeight] = useState('80px');
 
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('connect'); // Get the contact section by its ID
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
+        }
+    };
+    
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 50) {
@@ -59,9 +67,10 @@ export const NavBar = () => {
                         <div className="social-icon">
                             <a href="https://www.linkedin.com/in/najia-jahan-40ba11175/" target="_blank"> <img src={navIcon1} alt="" /> </a>
                             <a href="https://github.com/najia096" target="_blank"> <img src={navIcon2} alt="" /> </a>
+                            <a href="https://leetcode.com/naziausha/" target="_blank"> <img src={navIcon4} alt="" /> </a>
                             <a href="https://www.facebook.com/raisa.riyasat" target="_blank"> <img src={navIcon3} alt="" /> </a>
                         </div>
-                        <button className="vvd" onClick={() => console.log('connect')}>
+                        <button className="vvd" onClick={scrollToContact}>
                             <span>Let's Connect</span>
                         </button>
                     </span>

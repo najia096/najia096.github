@@ -2,7 +2,7 @@
 .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
-    background-image: url('../assets/img/banner-bg.png');
+    background-image: url('../assets/img/banner-bg0.png');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@
   }
   
   .banner p {
-    color: #B8B8B8;
+    color: #ffffff;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;

@@ -30,10 +30,10 @@ export const Skills = () => {
                <Tab.Container id="skills-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Programing Language</Nav.Link>
+                      <Nav.Link eventKey="first">Programming</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Technical Skills</Nav.Link>
+                      <Nav.Link eventKey="second">Technical & Design</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="third">Core Competencies</Nav.Link>
@@ -42,17 +42,18 @@ export const Skills = () => {
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <p>
-                      <strong>Proficient in:</strong> C++, Python
+                      <strong>Programming Language:</strong> C++ (Proficient), Python3, Javafx, SQL, Scheme
                       </p>
                       <p>
-                        <strong>Familiar with:</strong> C, Java, Javafx, SQL, HTML, CSS, JavaScript,Node JS, Scheme</p>
+                        <strong>Web Development:</strong> HTML, CSS, JavaScript, REACT, Node JS</p>
+                      <p>
+                        <strong>Tools & IDE:</strong> VS Code, IntelliJ IDEA, MySQL, Github</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <p><strong>Productivity Software:</strong> Microsoft Office (Word, Excel, PowerPoint, MS Teams), Google Suite</p>
                       <p><strong>Development Tools:</strong> Visual Studio, MySQL, IntelliJ IDEA</p>
                       <p><strong>Banking Softwares:</strong> FIS Core Banking APIs, Service Now</p>
                       <p><strong>Designing Tools:</strong> Figma, Canva</p>
-                      <p><strong>Version Control:</strong> Github</p>
                       </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Problem Solving & Troubleshooting</p>

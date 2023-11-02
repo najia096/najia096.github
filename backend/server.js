@@ -2,21 +2,21 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+require('dotenv').config();
+// Your other code here
 
-// server used to send send emails
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "nzusha@gmail.com",
-    pass: "ftie rxkm gdig syij"
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
 });
 
@@ -28,25 +28,36 @@ contactEmail.verify((error) => {
   }
 });
 
+// ... (Your imports and setup)
+
 router.post("/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
-  const email = req.body.email;
-  const message = req.body.message;
-  const phone = req.body.phone;
-  const mail = {
-    from: name,
-    to: "nzusha@gmail.com",
+  const { firstName, lastName, email, message, phone } = req.body;
+
+  const senderName = `${firstName} ${lastName}`;
+  
+  const mailOptions = {
+    from: `"Your Website" <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_USER, // Change to use the env variable
     subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
+    html: `
+      <p><strong>Name:</strong> ${senderName}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Message:</strong> ${message}</p>
+    `,
   };
-  contactEmail.sendMail(mail, (error) => {
+
+  contactEmail.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.json(error);
+      if (error.response) {
+        res.status(400).json({ error: "Invalid request" });
+      } else if (error.code === 'EAUTH') {
+        res.status(401).json({ error: "Authentication failed" });
+      } else {
+        res.status(500).json({ error: "Message sending failed" });
+      }
     } else {
-      res.json({ code: 200, status: "Message Sent" });
+      res.status(200).json({ message: "Message Sent" });
     }
   });
 });

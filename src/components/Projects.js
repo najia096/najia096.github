@@ -4,6 +4,9 @@ import projImg1 from "../assets/img/plant1.png";
 import projImg2 from "../assets/img/plant2.png";
 import projImg3 from "../assets/img/plant3.gif";
 import projImg4 from "../assets/img/plant4.gif";
+import projImg5 from "../assets/img/lasso1.jpg";
+import projImg6 from "../assets/img/lasso2.jpg";
+import projImg7 from "../assets/img/codepath.gif";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "./Projects.css";
 import TrackVisibility from 'react-on-screen';
@@ -32,6 +35,26 @@ export const Projects = () => {
 
   ];
 
+  const projects2 = [
+    {
+      title: "Home Page Design",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Add Product Page",
+      imgUrl: projImg6,
+    },
+
+  ];
+
+  const projects3 = [
+    {
+      title: "Web Application",
+      imgUrl: projImg7,
+    },
+
+  ];
+
   return (
     <section className="project" id="projects">
       <Container>
@@ -48,10 +71,10 @@ export const Projects = () => {
                       <Nav.Link eventKey="first">Plantex</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">Lasso</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">Climate Today</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -70,10 +93,34 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Row>
+                    <p>Collaborative Achievement: Group Project Crafting an Innovative Online Bidding Platform with React & Node.js, Backed by Back4App</p>
+                        {
+                          projects2.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                      <p>A Web Application Addressing Climate Change: Understanding Impact and Promoting Prevention Strategies</p>
+                      <Row>
+                        {
+                          projects3.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
